@@ -38,8 +38,8 @@
           </a>
           <ul id="nav_list" class="nav-list">
             <li class="nav-item min"><a href="#">選ばれる理由</a></li>
-            <li class="nav-item min"><a href="#sec-service">サービス紹介</a></li>
-            <li class="nav-item min"><a href="#sec-solutions">ソリューション</a></li>
+            <li class="nav-item min"><a href="{{ route('top') }}#sec-service">サービス紹介</a></li>
+            <li class="nav-item min"><a href="{{ route('top') }}#sec-solutions">ソリューション</a></li>
             <li class="nav-item min"><a href="{{ route('company.info') }}">会社情報</a></li>
             <li class="nav-item min"><a href="#sec-news">ニュース</a></li>
             <li class="nav-item min"><a href="#sec-contact" class="nav-contact">お問い合わせ</a></li>
@@ -54,7 +54,7 @@
             <img class="logo-img" src="{{ asset('images/logo.png') }}" alt="AND-1ロゴ">
             <p class="header-logo">and-1</p>
           </a>
-          <p class="sp-none nav-contact"><a>お問い合わせ</a></p>
+          <p class="sp-none nav-contact"><a href="#sec-contact">お問い合わせ</a></p>
           <div id="btn" class="btn">
             <i></i>
             <i></i>
@@ -140,7 +140,7 @@
               </label>
               <div class="content">
                 <p class="nav-link">
-                  <a href="#sec-news">- 　最新情報</a>
+                  <a href="{{ route('top') }}#sec-news">- 　最新情報</a>
                 </p>
               </div>
             </div>
@@ -151,9 +151,16 @@
     </header>
 
     <main>
-      <section class="sec-top">
+      <section id="sec-top" class="sec-top">
         <figure id="top-img" class="top-img">
-          <img src="{{ asset('images/top_img.png') }}" alt="topイメージ">
+          <div class="top-img-container">
+            <img class="top-01 top-min" src="{{ asset('images/top/ai.png') }}" alt="topイメージ">
+            <img class="top-02 top-min" src="{{ asset('images/top/file.png') }}" alt="topイメージ">
+            <img class="top-03 top-min" src="{{ asset('images/top/pc.png') }}" alt="topイメージ">
+            <img class="top-04 top-min" src="{{ asset('images/top/robot.png') }}" alt="topイメージ">
+            <img class="top-05" src="{{ asset('images/top/top_bg.png') }}" alt="topイメージ">
+            {{-- <img class="top-06" src="{{ asset('images/top_img.png') }}" alt="topイメージ"> --}}
+          </div>
         </figure>
 
         <article class="top-text-box">
@@ -424,7 +431,7 @@
           </div>
           <div class="footer-link">
             <p>ソリューション</p>
-            <a href="#">- ご相談</a>
+            <a href="{{ route('top') }}#sec-solutions">- ご相談</a>
           </div>
           <div class="footer-link">
             <p>会社情報</p>
@@ -450,7 +457,9 @@
           <div class="footer-copy">
             <P class="copy">Copyright &copy; AND-1 All rights reserved.</P>
             <div class="to-top-box">
-              <div class="to-top"></div>
+              <a href="#sec-top">
+                <div class="to-top"></div>
+              </a>
             </div>
           </div>
         </div>

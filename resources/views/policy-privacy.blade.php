@@ -36,10 +36,10 @@
           </a>
           <ul id="nav_list" class="nav-list">
             <li class="nav-item min"><a href="#">選ばれる理由</a></li>
-            <li class="nav-item min"><a href="#sec-service">サービス紹介</a></li>
-            <li class="nav-item min"><a href="#sec-solutions">ソリューション</a></li>
+            <li class="nav-item min"><a href="{{ route('top') }}#sec-service">サービス紹介</a></li>
+            <li class="nav-item min"><a href="{{ route('top') }}#sec-solutions">ソリューション</a></li>
             <li class="nav-item min"><a href="{{ route('company.info') }}">会社情報</a></li>
-            <li class="nav-item min"><a href="#sec-news">ニュース</a></li>
+            <li class="nav-item min"><a href="{{ route('top') }}#sec-news">ニュース</a></li>
             <li class="nav-item min"><a href="#sec-contact" class="nav-contact">お問い合わせ</a></li>
           </ul>
         </div>
@@ -52,7 +52,7 @@
             <img class="logo-img" src="{{ asset('images/logo.png') }}" alt="AND-1ロゴ">
             <p class="header-logo">and-1</p>
           </a>
-          <p class="sp-none nav-contact"><a>お問い合わせ</a></p>
+          <p class="sp-none nav-contact"><a href="#sec-contact">お問い合わせ</a></p>
           <div id="btn" class="btn">
             <i></i>
             <i></i>
@@ -149,7 +149,7 @@
     </header>
 
     <main>
-			<article class="page-title">
+			<article id="page-title" class="page-title">
 				<h1>PRIVACY POLICY</h1>
 				<p>プライバシーポリシー</p>
 			</article>
@@ -296,7 +296,7 @@
           </div>
           <div class="footer-link">
             <p>ソリューション</p>
-            <a href="#">- ご相談</a>
+            <a href="{{ route('top') }}#sec-solutions">- ご相談</a>
           </div>
           <div class="footer-link">
             <p>会社情報</p>
@@ -322,7 +322,9 @@
           <div class="footer-copy">
             <P class="copy">Copyright &copy; AND-1 All rights reserved.</P>
             <div class="to-top-box">
-              <div class="to-top"></div>
+              <a href="#page-title">
+                <div class="to-top"></div>
+              </a>
             </div>
           </div>
         </div>
